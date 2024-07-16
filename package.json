@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^9.108.4",
+    "@react-three/fiber": "^8.16.8",
     "@reduxjs/toolkit": "^2.2.6",
     "@types/react-router-dom": "^5.3.3",
     "@types/redux-promise": "^0.5.32",
@@ -21,11 +23,13 @@
     "redux": "^5.0.1",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^3.1.0",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.11",
+    "three": "^0.166.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.166.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
