@@ -1,17 +1,12 @@
 import styled from "styled-components"
-import ThreeScene from "../components/ThreeScene/ThreeScene";
 import React from "react";
+import BoxScene from "../components/ThreeScene/BoxScene";
 
-interface childrenProps {
-    children: string;
-}
 
-export const ThreePage: React.FC<childrenProps> = ({children}) => {
+export const ThreePage: React.FC= () => {
     return(
         <Container>
-            <ThreeScene>
-                {children}
-            </ThreeScene>
+            <BoxScene />
         </Container>
     )
 }

@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import Login from "../components/MenuBar/LoginBtn";
+import Login from "../components/MenuBar/Login";
 
 export const LoginPage = () => {
     return(

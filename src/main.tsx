@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './App';
 import { Provider } from 'react-redux';
 import { applyMiddleware, compose, createStore, Middleware } from 'redux';
@@ -30,12 +31,14 @@ const store = createStore(
   composeEnhancers(applyMiddleware(...middlewares))
 );
 
+const container = document.getElementById("root");
+const root = createRoot(container!);
+
 // Render your app with Redux Provider
-ReactDOM.render(
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
 );
