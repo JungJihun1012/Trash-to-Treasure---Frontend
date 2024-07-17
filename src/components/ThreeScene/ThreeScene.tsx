@@ -1,5 +1,3 @@
-// src/components/ThreeScene.tsx
-
 import React, { useEffect, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Vector3, Group } from 'three';

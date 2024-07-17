@@ -1,32 +1,31 @@
-// src/components/ColoredEdgesBox.tsx
-
-import React, { forwardRef, useRef } from 'react';
-import { useFrame } from '@react-three/fiber';
+import React, { useRef } from 'react';
+import { useFrame, useLoader } from '@react-three/fiber';
 import { Edges } from '@react-three/drei';
-import { Material, Mesh, Object3D} from 'three';
+import { TextureLoader, Mesh, BoxGeometry, MeshStandardMaterial } from 'three';
 
-interface ColoredEdgesBoxProps {
-  forwardedRef?: React.Ref<Mesh<Object3D ,Material>>;
-}
+const ColoredEdgesBox: React.FC = () => {
+  const innerRef = useRef<Mesh>(null!);
 
-const ColoredEdgesBox = forwardRef<Object3D, ColoredEdgesBoxProps>(() => {
-  const innerRef = useRef<Object3D>(null!);
+  // 텍스처 로드
+  const texture = useLoader(TextureLoader, '/UpcyclingShoes.jpg');
 
   useFrame(() => {
     if (innerRef.current) {
-      // Example rotation animation
+      // 회전 애니메이션
       innerRef.current.rotation.x += 0.01;
       innerRef.current.rotation.y += 0.01;
     }
   });
 
   return (
-    <mesh ref={innerRef as any}>
-      <boxGeometry args={[3, 3, 3]} />
-      <meshStandardMaterial color={0x00ff00} />
+    <>
+      <primitive
+        object={new Mesh(new BoxGeometry(3, 3, 3), new MeshStandardMaterial({ map: texture }))}
+        ref={innerRef}
+      />
       <Edges color={0xff0000} />
-    </mesh>
+    </>
   );
-});
+};
 
 export default ColoredEdgesBox;
