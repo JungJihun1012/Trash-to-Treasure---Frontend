@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Register from "../components/MenuBar/Register";
 
-export const RegisterPage = () => {
+const RegisterPage = () => {
     return(
         <Container>
             <Register />
@@ -9,4 +9,5 @@ export const RegisterPage = () => {
     )
 }
 
+export default RegisterPage;
 export const Container = styled.div``;

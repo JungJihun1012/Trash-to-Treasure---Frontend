@@ -4,26 +4,19 @@ export const LoginBtn = () => {
     return (
         <Container>
             <Loginbtn>
-                로그인
+                Login/ Sign Up
             </Loginbtn>
         </Container>
     )
 }
 
-export const Container = styled.div``;
+export const Container = styled.div`
+`;
 export const Loginbtn = styled.button`
+    background: #d30000;
+    padding: 10px 10px;
+    border: 1px solid #d30000;
+    border-radius: 20px;
+    color: #fff;
     cursor: pointer;
-    background: #4b6cb7;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px 0;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-
-    &:hover {
-        background: #182848;
-        transform: scale(1.05);
-    }
 `;

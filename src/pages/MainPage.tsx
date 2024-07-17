@@ -1,14 +1,13 @@
 import styled from "styled-components"
-import { MenuBar } from "../components/MenuBar/MenuBar";
-// import { ThreeBackground } from "../components/ThreeBackground/ThreeBackground";
+import { ThreeBackground } from "../components/ThreeBackground/ThreeBackground";
 
-export const MainPage = () => {
+const MainPage = () => {
     return(
         <Container>
-            {/* <ThreeBackground /> */}
-            <MenuBar />
+            <ThreeBackground />
         </Container>
     )
 }
 
+export default MainPage;
 export const Container = styled.div``;

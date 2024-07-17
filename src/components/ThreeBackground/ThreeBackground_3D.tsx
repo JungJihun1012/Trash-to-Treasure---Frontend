@@ -1,21 +1,20 @@
-// src/components/ThreeBackground.js
-import { Canvas } from '@react-three/fiber';
-import { Box } from '@react-three/drei';
-import React from 'react';
+// src/components/ThreeBackground.tsx
 
-interface Three3DProps {
-    children: React.ReactNode;
-}
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import Wave from "./Wave";
 
-const ThreeBackground_3D: React.FC<Three3DProps> = ({children}) => {
-  return (
-    <Canvas>
-      <ambientLight intensity={0.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <Box args={[3, 3, 3]} position={[0, 0, 0]} />
-      {children}
-    </Canvas>
-  );
+const ThreeBackground_3D: React.FC = () => {
+    return (
+        <Canvas
+            style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+            camera={{ position: [0, 0, 5], fov: 75 }}
+        >
+            <ambientLight intensity={0.5} />
+            <pointLight position={[10, 10, 10]} />
+            <Wave />
+        </Canvas>
+    );
 };
 
 export default ThreeBackground_3D;

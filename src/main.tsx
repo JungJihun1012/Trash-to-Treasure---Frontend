@@ -7,6 +7,7 @@ import { applyMiddleware, compose, createStore, Middleware } from 'redux';
 import { thunk, ThunkMiddleware } from 'redux-thunk';
 import promiseMiddleware from 'redux-promise';
 import rootReducer from './_reducer'; // Replace with your actual rootReducer import
+import './index.css';
 
 // RootState type, representing the shape of your entire Redux store state
 type RootState = ReturnType<typeof rootReducer>;

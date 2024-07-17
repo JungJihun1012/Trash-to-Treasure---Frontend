@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import ThreeBackground_3D from "./ThreeBackground_3D";
+// import ThreeBackground_3D from "./ThreeBackground_3D";
 import { MenuBar } from "../MenuBar/MenuBar";
+import { ThreeText } from "./ThreeText";
 
 
 export const ThreeBackground: React.FC = () => {
     return(
         <Container>
-            <ThreeBackground_3D>
-                <MenuBar />
-            </ThreeBackground_3D>
+            <MenuBar />
+            <ThreeText />
         </Container>
     )
 }

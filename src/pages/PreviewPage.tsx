@@ -1,13 +1,12 @@
 import styled from "styled-components"
-import Login from "../components/MenuBar/Login";
 
-const LoginPage = () => {
+const PreviewPage = () => {
     return(
         <Container>
-            <Login />
+
         </Container>
     )
 }
 
-export default LoginPage;
+export default PreviewPage;
 export const Container = styled.div``;
