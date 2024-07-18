@@ -31,8 +31,9 @@
     "redux": "^5.0.1",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^3.1.0",
+    "some-library": "^1.0.0",
     "styled-components": "^6.1.11",
-    "three": "^0.166.1"
+    "three": "^0.166.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

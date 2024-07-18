@@ -71,11 +71,14 @@ importers:
       redux-thunk:
         specifier: ^3.1.0
         version: 3.1.0(redux@5.0.1)
+      some-library:
+        specifier: ^1.0.0
+        version: 1.0.0
       styled-components:
         specifier: ^6.1.11
         version: 6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       three:
-        specifier: ^0.166.1
+        specifier: ^0.166.0
         version: 0.166.1
     devDependencies:
       '@types/react':
@@ -1385,6 +1388,9 @@ packages:
   slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
+
+  some-library@1.0.0:
+    resolution: {integrity: sha512-Cb1dSz8GYE4Y4wCKHxxRcAh8niHTTJTbjebek5GfsfUjLkA7Qpt5VP545ul2kSGNSvO3Z8Vsyu/b9JnzldrENQ==}
 
   source-map-js@1.2.0:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
@@ -2796,6 +2802,8 @@ snapshots:
   shebang-regex@3.0.0: {}
 
   slash@3.0.0: {}
+
+  some-library@1.0.0: {}
 
   source-map-js@1.2.0: {}
 
