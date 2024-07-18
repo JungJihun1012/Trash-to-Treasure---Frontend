@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components"
 
 export const LoginBtn = () => {
     return (
         <Container>
+            <Link to={"/login"}>
             <Loginbtn>
                 Login/ Sign Up
             </Loginbtn>
+            </Link>
         </Container>
     )
 }
