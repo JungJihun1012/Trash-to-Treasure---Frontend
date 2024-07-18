@@ -10,8 +10,8 @@ const Example = () => {
 }
 
 export const Container = styled.div`
-    width: 1535px;
-    height: 625px;
+    // width: 1535px;
+    height: 92.3vh;
     background-color: black;
 `;
 export default Example;

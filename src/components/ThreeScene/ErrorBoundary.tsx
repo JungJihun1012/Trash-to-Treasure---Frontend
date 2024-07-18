@@ -1,4 +1,5 @@
 import { Component, ErrorInfo, ReactNode } from 'react';
+import styled from 'styled-components';
 
 interface Props {
   children: ReactNode;
@@ -21,11 +22,12 @@ class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>;
+      return <H1>Something went wrong.</H1>; // Canvas 외부로 이동
     }
 
     return this.props.children;
   }
 }
 
+export const H1 = styled.h1``;
 export default ErrorBoundary;

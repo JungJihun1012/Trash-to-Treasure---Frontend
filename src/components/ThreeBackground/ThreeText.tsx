@@ -40,4 +40,5 @@ export const SpanText = styled.span`
     font-style: normal;
     letter-spacing: -0.09ex;
     text-transform: uppercase;
+    color: #fff;
 `;
