@@ -1,26 +1,32 @@
 import styled from "styled-components";
 import React from "react";
-import ExampleImage from "./ExampleImage";
-import ExampleText from "./ExampleText";
+import UpcyclingBag from "./UpcyclingBag";
+import UpcyclingShoes from "./UpcyclingShoes";
+import UpcyclingGuitar from "./UpcyclingGiutar";
+import UpcyclingTenis from "./UpcyclingTenis";
+import UpcyclingBagText from "./Text/UpcyclingBagText";
+import UpcyclingTenisText from "./Text/UpcyclingTenis";
+import UpcyclingShoesText from "./Text/UpcyclingShoesText";
+import UpcyclingGiutarText from "./Text/UpcyclingGiutarText";
 
 const ExampleBox: React.FC = () => {
     return(
         <Container>
             <Box>
-                <ExampleImage />
-                <ExampleText />
+                <UpcyclingBag />
+                <UpcyclingBagText />
             </Box>
             <Box>
-                <ExampleImage />
-                <ExampleText />
+                <UpcyclingShoes />
+                <UpcyclingShoesText />
             </Box>
             <Box>
-                <ExampleImage />
-                <ExampleText />
+                <UpcyclingGuitar />
+                <UpcyclingGiutarText />
             </Box>
             <Box>
-                <ExampleImage />
-                <ExampleText />
+                <UpcyclingTenis />
+                <UpcyclingTenisText />
             </Box>
         </Container>
     )

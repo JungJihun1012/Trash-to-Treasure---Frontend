@@ -1,9 +1,10 @@
 import React, { useRef, useEffect, Suspense } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Canvas, extend, useThree } from '@react-three/fiber';
 import { Group, Box3, MeshStandardMaterial } from 'three';
 import { useGLTF } from '@react-three/drei';
-import ErrorBoundary from './ErrorBoundary';
 import * as THREE from 'three';
+
+extend({ Canvas });
 
 interface ThreeSceneProps {
   children: React.ReactNode;
@@ -56,20 +57,12 @@ const ThreeScene: React.FC<ThreeSceneProps> = ({ children, desiredWidth }) => {
     };
   }, []);
 
-  useFrame(() => {
-    if (!controlsRef.current) return;
-    if (isMoving.current) {
-      controlsRef.current.rotation.y += 0.01;
-    }
-  });
-
   useEffect(() => {
     camera.position.set(0, 0, 5);
   }, [camera]);
 
   return (
     <div>
-      <h1>Three.js Scene</h1>
       <Canvas>
         <Suspense fallback={null}>
           <directionalLight position={[5, 5, 5]} intensity={1} />

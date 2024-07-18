@@ -15,12 +15,12 @@ export const TB = () => {
                 </Link>
                 <Link to={"/preview"}>
                 <NavBtn $isSelected={location.pathname === "/preview" }>
-                    Preview
+                    3D Preview
                 </NavBtn>
                 </Link>
-                <Link to={"/three"}>
-                <NavBtn $isSelected={location.pathname === "/three"}>
-                    3D View
+                <Link to={"https://veluga.app/channel/669860355b1c601f77d12bab"}>
+                <NavBtn $isSelected={location.pathname === "/https://veluga.app/channel/669860355b1c601f77d12bab"}>
+                    Help
                 </NavBtn>
                 </Link>
             </Content>

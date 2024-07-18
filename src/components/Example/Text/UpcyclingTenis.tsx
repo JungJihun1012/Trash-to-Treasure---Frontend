@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-const ExampleText = () => {
+const UpcyclingTenisText = () => {
     return(
         <Container>
             <HeadText>
-                Example lorem
+                테니스 공
             </HeadText>
             <BodyText>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus explicabo, possimus id a, totam quibusdam dolor, quis hic nulla laudantium unde nemo. Repellat magni ut harum voluptatem quas, libero facere?
+            업사이클링 디자이너 니콜 맥래플린이 테니스공을 분해해 디자인한 모자와 장갑.
             </BodyText>
         </Container>
     )
@@ -23,9 +23,9 @@ export const HeadText = styled.div`
 `;
 export const BodyText = styled.div`
     padding-top: 20px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
     text-align: center;
     color: #fff;
 `;
-export default ExampleText;
+export default UpcyclingTenisText;
