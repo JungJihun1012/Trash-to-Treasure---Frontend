@@ -15,7 +15,7 @@ export const App = () => {
         <Route path="/register" element={<RegisterPage />} loader={RegisterPage.load} />
         <Route path="/preview" element={<PreviewPage /> } loader={PreviewPage.load} />
         <Route path="/three" element={<ThreePage />} loader={ThreePage.load} />
-        <Route path="/main" element={<MainPage />} loader={MainPage.load} />
+        <Route path="/" element={<MainPage />} loader={MainPage.load} />
       </Routes>
     </BrowserRouter>
   )

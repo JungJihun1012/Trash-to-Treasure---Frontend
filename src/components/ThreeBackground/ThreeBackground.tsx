@@ -4,11 +4,13 @@ import styled from "styled-components";
 import { MenuBar } from "../MenuBar/MenuBar";
 import { ThreeText } from "./ThreeText";
 // import AnimatedBackground from "./AnimateBackground";
+// import AnimatedBackground from "./AnimateBackground";
 
 
 export const ThreeBackground: React.FC = () => {
     return(
         <Container>
+            {/* <AnimatedBackground /> */}
             <MenuBar />
             <ThreeText />
         </Container>

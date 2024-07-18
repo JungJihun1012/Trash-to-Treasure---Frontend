@@ -4,22 +4,26 @@ export const ThreeText = () => {
     return(
         <Container>
             <SpanText>
-                <i>T</i>
-                <i>R</i>
-                <i>A</i>
-                <i>S</i>
-                <i>H</i>
+                <i>U</i>
+                <i>P</i>
+                <i>C</i>
+                <i>Y</i>
+                <i>C</i>
+                <i>L</i>
+                <i>I</i>
+                <i>N</i>
+                <i>G</i>
             </SpanText>
             <br />
             <SpanText>
-                <i>T</i>
+                <i>P</i>
                 <i>R</i>
-                <i>E</i>
-                <i>A</i>
-                <i>S</i>
+                <i>O</i>
+                <i>D</i>
                 <i>U</i>
-                <i>R</i>
-                <i>E</i>
+                <i>C</i>
+                <i>T</i>
+                <i>S</i>
             </SpanText>
         </Container>
     )

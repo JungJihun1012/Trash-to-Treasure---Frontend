@@ -8,7 +8,7 @@ export const TB = () => {
     return (
         <Container>
             <Content>
-                <Link to={"/main"}>
+                <Link to={"/"}>
                     <NavBtn $isSelected={location.pathname === "/main"}>
                         Home
                     </NavBtn>
