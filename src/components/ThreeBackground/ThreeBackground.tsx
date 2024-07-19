@@ -18,6 +18,6 @@ export const ThreeBackground: React.FC = () => {
 };
 
 const MotionContainer = motion(styled.div`
-    background: linear-gradient(135deg, #666666 0%, #999999 100%);
+    background-color: #333;
     height: 100vh;
 `);

@@ -1,8 +1,8 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import * as THREE from 'three';
 
-const UpcyclingShose3D = () => {
+const UpcyclingShose3D: React.FC = () => {
     const canvasRef = useRef(null);
 
     useEffect(() => {
@@ -11,10 +11,10 @@ const UpcyclingShose3D = () => {
         const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         if (canvasRef.current instanceof HTMLDivElement) {
-            canvasRef.current.appendChild(renderer.domElement);
+            canvasRef.current;
         }
         if(!!canvasRef.current){
-            canvasRef.current.appendChild(renderer.domElement);
+            canvasRef.current;
         }
         
         const textureLoader = new THREE.TextureLoader();

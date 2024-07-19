@@ -6,7 +6,7 @@ export const LoginBtn = () => {
         <Container>
             <Link to={"/login"}>
             <Loginbtn>
-                Login/ Sign Up
+                Login
             </Loginbtn>
             </Link>
         </Container>

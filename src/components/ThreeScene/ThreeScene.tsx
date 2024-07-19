@@ -1,39 +1,15 @@
-import React, { useRef, useEffect, Suspense } from 'react';
-import { Canvas, extend, useThree } from '@react-three/fiber';
-import { Group, Box3, MeshStandardMaterial } from 'three';
-import { useGLTF } from '@react-three/drei';
-import * as THREE from 'three';
-
-extend({ Canvas });
+import React, { useEffect, useRef } from 'react';
+import { useFrame } from '@react-three/fiber';
+import { Vector3, Group } from 'three';
 
 interface ThreeSceneProps {
   children: React.ReactNode;
-  desiredWidth: number;
 }
 
-const ThreeScene: React.FC<ThreeSceneProps> = ({ children, desiredWidth }) => {
-  const controlsRef = useRef<Group | null>(null);
+const ThreeScene: React.FC<ThreeSceneProps> = ({ children }) => {
+  const controlsRef = useRef<Group>(new Group());
   const isMoving = useRef(false);
-
-  const { scene } = useGLTF('/Side_Table.glb') as any;
-  const { camera } = useThree();
-
-  useEffect(() => {
-    scene.position.set(0, 0, 0);
-    scene.scale.set(1, 1, 1);
-
-    const box = new Box3().setFromObject(scene);
-    const originalWidth = box.max.x - box.min.x;
-    const scaleFactor = desiredWidth / originalWidth;
-    scene.scale.set(scaleFactor, scaleFactor, scaleFactor);
-
-    const material = new MeshStandardMaterial({ color: 'red', roughness: 0.5, metalness: 0.5 });
-    scene.traverse((child: any) => {
-      if (child.isMesh) {
-        child.material = material;
-      };
-    });
-  }, [scene, desiredWidth]);
+  const velocity = useRef(new Vector3(0, 0, -1)); // Moving forward by default
 
   useEffect(() => {
     const onMouseDown = (event: MouseEvent) => {
@@ -57,25 +33,21 @@ const ThreeScene: React.FC<ThreeSceneProps> = ({ children, desiredWidth }) => {
     };
   }, []);
 
-  useEffect(() => {
-    camera.position.set(0, 0, 5);
-  }, [camera]);
+  useFrame(() => {
+    if (controlsRef.current && isMoving.current) {
+      controlsRef.current.translateX(velocity.current.x * 0.02);
+      controlsRef.current.translateZ(velocity.current.z * 0.02);
+    }
+  });
 
   return (
-    <div>
-      <Canvas>
-        <Suspense fallback={null}>
-          <directionalLight position={[5, 5, 5]} intensity={1} />
-          <group ref={controlsRef as React.RefObject<THREE.Group>}>
-            <primitive object={scene} />
-            {children}
-          </group>
-        </Suspense>
-      </Canvas>
-    </div>
-  );
+    <mesh>
+      <group ref={controlsRef}>
+        {children}
+      </group>
+    </mesh>
+  ) 
+  ;
 };
 
 export default ThreeScene;
-
-useGLTF.preload('/Side_Table.glb');

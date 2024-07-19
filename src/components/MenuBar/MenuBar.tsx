@@ -20,7 +20,7 @@ export const MenuBar: React.FC = () => {
 };
 
 export const Container = styled.div`
-    background-color: #333;
+    background: linear-gradient(135deg, #666666 0%, #999999 100%);
     height: 70px;
 `;
 export const Content = styled.div`
