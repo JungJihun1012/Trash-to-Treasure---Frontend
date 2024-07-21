@@ -37,4 +37,9 @@ export const Content = styled.div`
 `;
 export const NavBtn = styled.div<{$isSelected?: boolean}>`
     cursor: pointer;
+    font-family: "Archivo Black", Arial, sans-serif;
+    font-size: 13px;
+    /* font-weight: 400; */
+    font-style: normal;
+    color: #fff;
 `;

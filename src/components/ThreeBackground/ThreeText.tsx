@@ -66,7 +66,7 @@ export const ThreeText = () => {
 }
 
 export const Container = styled.div`
-    padding: 10% 0 0 50px;
+    padding: 10%;
 `;
 export const SpanText = styled.span`
     line-height: 1em;
