@@ -3,7 +3,7 @@ import styled from "styled-components";
 import * as THREE from 'three';
 
 const UpcyclingShose3D: React.FC = () => {
-    const canvasRef = useRef(null);
+    const canvasRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         const scene = new THREE.Scene();

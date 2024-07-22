@@ -1,21 +1,30 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import loadable from "@loadable/component";
 
-const LoginPage = loadable(() => import("./pages/LoginPage"));
-const RegisterPage = loadable(() => import("./pages/RegisterPage"));
-const MainPage = loadable(() => import("./pages/MainPage"));
-const ThreePage = loadable(() => import("./pages/ThreePage"));
-const PreviewPage = loadable(() => import("./pages/PreviewPage"));
+const pages = [
+  { path: "/login", component: () => import(/* @vite-ignore */ "./pages/LoginPage") },
+  { path: "/register", component: () => import(/* @vite-ignore */ "./pages/RegisterPage") },
+  { path: "/preview", component: () => import(/* @vite-ignore */ "./pages/PreviewPage") },
+  { path: "/three", component: () => import(/* @vite-ignore */ "./pages/ThreePage") },
+  { path: "/", component: () => import(/* @vite-ignore */ "./pages/MainPage") },
+  { path: "/upcyclingShose", component: () => import(/* @vite-ignore */ "./pages/UpcyclingShose3DPage") },
+  { path: "/upcyclingBag", component: () => import(/* @vite-ignore */ "./pages/UpcyclingBag3DPage") },
+  { path: "/upcyclingGuitar", component: () => import(/* @vite-ignore */ "./pages/UpcyclingGuitar3DPage") },
+  { path: "/upcyclingTenis", component: () => import(/* @vite-ignore */ "./pages/UpcyclingTenisPage") },
+];
+
+const loadablePages = pages.map(page => ({
+  ...page,
+  component: loadable(page.component),
+}));
 
 export const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={< LoginPage />} loader={LoginPage.load}/>
-        <Route path="/register" element={<RegisterPage />} loader={RegisterPage.load} />
-        <Route path="/preview" element={<PreviewPage /> } loader={PreviewPage.load} />
-        <Route path="/three" element={<ThreePage />} loader={ThreePage.load} />
-        <Route path="/" element={<MainPage />} loader={MainPage.load} />
+        {loadablePages.map(({ path, component: Component }) => (
+          <Route key={path} path={path} element={<Component />} loader={Component.load} />
+        ))}
       </Routes>
     </BrowserRouter>
   )
